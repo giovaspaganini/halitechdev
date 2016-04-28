@@ -7,8 +7,8 @@ O projeto será feito baseado no [MaterializeCSS](http://materializecss.com) par
 # Desenvolvimento
 Será desenvolvido usando o acompanhamento no [Trello](https://trello.com/b/DZWNbVgK/site-halitech) e no [GitHub](https://github.com/giovaspaganini/halitechdev).
 
-# Licensa
-Usa a licensa do MIT. Eu nem sei o que está escrito aqui, não me processe.
+# Licença
+O Projeto usa a licença do MIT. Eu nem sei o que está escrito aqui, não me processe.
 
 # Prioridade de Desenvolvimento
 Infra-estrutra>Features>Design>Polimento.
