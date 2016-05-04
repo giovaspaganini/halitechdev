@@ -3,24 +3,34 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <title>Halitech Dev - Criação de Websites e Logos</title>
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <div class="nav-wrapper fixed container"><a id="logo-container" href="#!" class="brand-logo">Halitech</a>
+	<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+	
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="index.html">Home</a></li>
+		<li><a href="about.html">Sobre</a></li>
+		<li><a href="services.html">Serviços</a></li>
+		<li><a href="portfolio.html">Portfólio</a></li>
+		<li><a href="contact.html">Contato</a></li>
       </ul>
 
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+      <ul class="side-nav" id="nav-mobile">
+        <li><a href="index.html">Home</a></li>
+		<li><a href="about.html">Sobre</a></li>
+		<li><a href="services.html">Serviços</a></li>
+		<li><a href="portfolio.html">Portfólio</a></li>
+		<li><a href="contact.html">Contato</a></li>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
@@ -80,7 +90,7 @@
     </div>
   </div>
 
-  <footer class="page-footer orange">
+  <footer class="page-footer blue">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -111,16 +121,16 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      &copy; 2016 Copyright <a class="blue-text text-lighten-3" href="http://halitech.org/">Hali Technologies Inc.</a>
       </div>
     </div>
   </footer>
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="js/jquery-2.2.3.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/custom.js"></script>  
 
   </body>
 </html>
