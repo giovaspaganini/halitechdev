@@ -1,3 +1,8 @@
+<!-- ================================================================================
+		Halitech Dev by Giovani Paganini - Contact Form designed for Halitech Dev
+	================================================================================= -->
+	
+
 <?php	
 	if (isset($_POST["submit"])) {
 		$para = 'contato@halitech.org';
