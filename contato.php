@@ -1,3 +1,63 @@
+<!-- ================================================================================
+		Halitech Dev by Giovani Paganini - Contact Form designed for Halitech Dev
+	================================================================================= -->
+	
+
+<?php	
+	if (isset($_POST["submit"])) {
+		$para = 'contato@halitech.org';
+		$assunto = 'Contato pelo Site';
+		$nome = $_POST['name'];
+		$email = $_POST['email'];		
+		$subject = $_POST['subject'];
+		$msg = $_POST['textarea'];
+		$spam = intval($_POST['human']);
+		
+			$corpo = "<strong> Mensagem de Contato </strong><br><br>";
+			$corpo .= "<strong> Nome: </strong> $nome";
+			$corpo .= "<br><strong> Email: </strong> $email";			
+			$corpo .= "<br><strong> Assunto: </strong> $subject";
+			$corpo .= "<br><strong> Mensagem: </strong> $msg";
+			
+			$header = "Content-Type: text/html; charset= utf-8\n";
+			$header .= "From: $email Reply-to: $email\n";
+			
+		
+		
+		// Verificar se o nome foi preenchido
+		if (!$_POST['name']) {
+			$errName = 'Por favor, digite seu nome';
+		}
+		
+		// Verificar se o email foi preenchido e é válido
+		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+			$errEmail = 'Por favor, use um endereço de email válido';
+		}
+			
+		// Verificar se o assunto foi preenchido
+		if (!$_POST['subject']) {
+			$errSubject = 'Por favor, digite um assunto';
+		}
+		
+		// Verificar se a mensagem foi preenchida
+		if (!$_POST['textarea']) {
+			$errMessage = 'Por favor, escreva sua mensagem';
+		}
+		// Verificar se o anti-spam está correto
+		if ($spam !== 7) {
+			$errHuman = 'Seu anti-spam está incorreto';
+		}
+// Se não houver nenhum erro, enviar email
+if (!$errName && !$errEmail && !$errFone && !$errSubject && !$errMessage && !$errHuman) {
+	if (mail ($para, $assunto, $corpo, $header)) {
+		$result='<div class="data-success">Obrigado! Entraremos em contato.</div>';
+	} else {
+		$result='<div class="alert alert-danger">Desculpe, ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.</div>';
+	}
+}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +114,7 @@
 				<h6>Ou envie-nos um email para <a href="mailto:contato@halitech.org">contato@halitech.org</a></h6>
 			</div>
 			<div class="col s6">
-			<form class="col s12">
+			<form class="col s12" method="post" action="contato.php">
 				<div class="row">
 					<div class="input-field col s12">
 						<input id="name" type="text" placeholder="Nome" class="validate">
@@ -75,10 +135,16 @@
 				</div>
 				<div class="row">
 					<div class="input-field col s12">
-						<textarea id="textarea1" class="materialize-textarea" length="160"></textarea>
-						<label for="textarea1">Mensagem</label>
+						<textarea id="textarea" class="materialize-textarea" length="160"></textarea>
+						<label for="textarea">Mensagem</label>
 					</div>
-				</div>				
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input for="human" type="text" class="validate">
+						<label for="human">4+3=</label>
+					</div>
+				</div>
 				<button class="btn waves-effect waves-light" type="submit" name="action">Enviar
 					<i class="material-icons right">send</i>
 				</button>        
